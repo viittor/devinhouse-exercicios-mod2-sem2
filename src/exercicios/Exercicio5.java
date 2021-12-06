@@ -23,17 +23,56 @@ public class Exercicio5 {
 		// EXERCICIO 5
 
 		Scanner entrada = new Scanner(System.in);
-		Calendar c = Calendar.getInstance();
-		System.out.println("Digite uma Data:"); // String data
-		entrada.nextLine();
-		Date data = c.getTime();
-		DateFormat f = DateFormat.getDateInstance();
-		SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
-		Date data2 = f.parse("21/01/1995");
-		System.out.println(data2);
-		System.out.println(data);
-		DateFormat formatData = DateFormat.getDateInstance();
-		System.out.println(formatData.format(data));
+		System.out.println("Digite uma Data:");
+		String data = entrada.nextLine();
+
+		String dia = data.substring(0,2);
+		String mes = data.substring(3,5);
+		String ano = data.substring(6);
+
+		switch (mes) {
+		case "01":
+			mes = "Janeiro";
+			break;
+		case "02":
+			mes = "Fevereiro";
+			break;
+		case "03":
+			mes = "Março";
+			break;
+		case "04":
+			mes = "Abril";
+			break;
+		case "05":
+			mes = "Maio";
+			break;
+		case "06":
+			mes = "Junho";
+			break;
+		case "07":
+			mes = "Julho";
+			break;
+		case "08":
+			mes = "Agosto";
+			break;
+		case "09":
+			mes = "Setembro";
+			break;
+		case "10":
+			mes = "Outubro";
+			break;
+		case "11":
+			mes = "Novembro";
+			break;
+		case "12":
+			mes = "Dezembro";
+			break;
+			default:
+				System.out.println("Você digitou o mês incorretamente!");
+				System.exit(0);
+		}
+		
+		System.out.printf("A data é %s de %s de %s!", dia, mes, ano);
 
 	}
 
